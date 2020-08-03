@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Bitzen.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace Bitzen.Controllers
 {
@@ -22,6 +23,22 @@ namespace Bitzen.Controllers
         {
             return View();
         }
+        public IActionResult Login()
+        {
+            return View();
+        }
+        public ActionResult Falha()
+        {
+            return View();
+        }
+        public ActionResult Sucesso()
+        {
+            return View();
+        }
+        public ActionResult Sobre()
+        {
+            return View();
+        }
 
         public IActionResult Privacy()
         {
@@ -33,5 +50,24 @@ namespace Bitzen.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        [HttpPost]
+        public ActionResult Index(FormCollection frmLogin)
+        {
+
+            return RedirectToAction("Sucesso", "Home");
+
+        }
+        public ActionResult Logout()
+        {
+            
+            return RedirectToAction("Index", "Home");
+        }
+        public ActionResult Troca_senha()
+        {
+
+
+            return View();
+        }
+       
     }
 }
