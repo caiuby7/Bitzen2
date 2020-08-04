@@ -33,10 +33,10 @@ namespace Bitzen.Controllers
         }
 
         [HttpGet]
-        [Route("/relatorio/{ano:int}")]
-        public async Task<ActionResult<List<Abastecimento>>> GetforUser(int idUsuario)
+        [Route("{ano:int}")]
+        public async Task<ActionResult<List<Abastecimento>>> Getforano(int ano)
         {
-            return Ok(await _service.BuscarPorUsuario(idUsuario));
+            return Ok(await _service.BuscarPorPeriodo(ano));
         }
 
         [HttpPost]

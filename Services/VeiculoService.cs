@@ -29,6 +29,12 @@ namespace Bitzen.Services
         {
             return await _repository.BuscarPorUsuario(idUser);
         }
+        public async Task<IEnumerable<Mes_Relatorio_Veiculo>> BuscarPorperiodo(int ano)
+        {
+            return await _repository.BuscarPorperiodo(ano);
+        }
+
+
         public async Task<IEnumerable<Veiculo>> BuscarTodos()
     {
       return await _repository.BuscarTodos();

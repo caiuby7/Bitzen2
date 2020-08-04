@@ -21,6 +21,7 @@ namespace Bitzen.Models
 
         public virtual TipoVeiculo tipoveiculo { get; set; }
 
-        
+        public List<Abastecimento> abastecimentos { get; set; }
+        public Relatorio_Abastecimento relatorio_abastecimento { get; set; }
     }
 }

@@ -10,6 +10,8 @@ namespace Bitzen.Interface.Services
     Task<Abastecimento> BuscarPorId(int id);
 
         Task<IEnumerable<Abastecimento>> BuscarPorUsuario(int id);
+
+        Task<IEnumerable<Abastecimento>> BuscarPorPeriodo(int ano);
         Task<Abastecimento> Criar(Abastecimento row);
     Task<Abastecimento> Atualizar(int id, Abastecimento row);
     Task<Abastecimento> Excluir(int id);

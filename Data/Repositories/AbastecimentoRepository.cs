@@ -39,6 +39,14 @@ namespace Bitzen.Data.Repositories
                                 .Where(x => x.IdUsuario == IdUsuario)
                                .ToListAsync();
         }
+        public async Task<IList<Abastecimento>> BuscarporPeriodo(int ano)
+        {
+            
+            return await _context.Abastecimento
+                               .AsNoTracking()
+                               .Where(x => x.Data.Year == ano)
+                               .ToListAsync();
+        }
         public async Task<IList<Abastecimento>> BuscarTodos()
         {
             return await _context.Abastecimento

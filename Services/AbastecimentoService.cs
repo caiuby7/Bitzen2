@@ -7,40 +7,44 @@ using Bitzen.Models;
 
 namespace Bitzen.Services
 {
-  public class AbastecimentoService : IAbastecimentoService
+    public class AbastecimentoService : IAbastecimentoService
     {
-    private readonly IAbastecimentoRepository _repository;
-    public AbastecimentoService(IAbastecimentoRepository repository)
-    {
-      _repository = repository;
-    }
+        private readonly IAbastecimentoRepository _repository;
+        public AbastecimentoService(IAbastecimentoRepository repository)
+        {
+            _repository = repository;
+        }
 
-    public async Task<Abastecimento> Atualizar(int id, Abastecimento row)
-    {
-      return await _repository.Atualizar(id, row);
-    }
+        public async Task<Abastecimento> Atualizar(int id, Abastecimento row)
+        {
+            return await _repository.Atualizar(id, row);
+        }
 
-    public async Task<Abastecimento> BuscarPorId(int id)
-    {
-      return await _repository.BuscarPorId(id);
-    }
+        public async Task<Abastecimento> BuscarPorId(int id)
+        {
+            return await _repository.BuscarPorId(id);
+        }
         public async Task<IEnumerable<Abastecimento>> BuscarPorUsuario(int IdUsuario)
         {
             return await _repository.BuscarporUsuario(IdUsuario);
         }
+        public async Task<IEnumerable<Abastecimento>> BuscarPorPeriodo(int ano)
+        {
+            return await _repository.BuscarporPeriodo(ano);
+        }
         public async Task<IEnumerable<Abastecimento>> BuscarTodos()
-    {
-      return await _repository.BuscarTodos();
-    }
+        {
+            return await _repository.BuscarTodos();
+        }
 
-    public async Task<Abastecimento> Criar(Abastecimento row)
-    {
-      return await _repository.Criar(row);
-    }
+        public async Task<Abastecimento> Criar(Abastecimento row)
+        {
+            return await _repository.Criar(row);
+        }
 
-    public Task<Abastecimento> Excluir(int id)
-    {
-      return _repository.Excluir(id);
+        public Task<Abastecimento> Excluir(int id)
+        {
+            return _repository.Excluir(id);
+        }
     }
-  }
 }

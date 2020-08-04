@@ -9,6 +9,7 @@ namespace Bitzen.Interface.Repositories
     Task<IList<Abastecimento>> BuscarTodos();
 
         Task<IList<Abastecimento>> BuscarporUsuario(int id);
+        Task<IList<Abastecimento>> BuscarporPeriodo(int ano);
         Task<Abastecimento> BuscarPorId(int id);
     Task<Abastecimento> Criar(Abastecimento row);
     Task<Abastecimento> Atualizar(int id, Abastecimento row);
