@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Bitzen.Models;
 using Microsoft.AspNetCore.Http;
+using Bitzen.Data;
 
 namespace Bitzen.Controllers
 {
@@ -44,6 +45,10 @@ namespace Bitzen.Controllers
         {
             return View();
         }
+        public IActionResult Inscreva()
+        {
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
@@ -56,6 +61,19 @@ namespace Bitzen.Controllers
 
             return RedirectToAction("Sucesso", "Home");
 
+        }
+        [HttpPost]
+        public async Task<ActionResult<DefaultViewModel>> Inscreva([FromServices] DataContext context, [FromBody] Usuario model)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+
+            model.Permissao = new Permissao("Administrador");
+            model.IdPermissao = 1;
+            context.Usuarios.Add(model);
+            await context.SaveChangesAsync();
+            return new DefaultViewModel(true, "Usuário criado com sucesso!", model);
         }
         public ActionResult Logout()
         {

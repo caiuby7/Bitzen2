@@ -1,26 +1,29 @@
 ﻿@{
-    ViewBag.Title = "SPC / SERASA";
+    
     Layout = "~/Views/Shared/_Layout2.cshtml";
 }
 @Html.Raw(TempData["msg"])
-<h2>Gerador TXT - ON</h2>
+<h2></h2>
 
 <h4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Acesso</h4>
-			<form method="post" action="/Home/Index" id="frmLogin">
-				<div class="email">
-                                        Login
-					<input type="text" name='txtUsuario' placeholder="Usuário" class='input-block-level'>
-                
-				</div>
-				<div class="pw">
-                                        Senha
-					<input type="password" name="txtSenha" placeholder="Senha" class='input-block-level'>
-				</div>
-				<div class="submit">
-					<input type="submit" value="Entrar" class='btn btn-primary'>
-				</div>
-                
+<form method="post" action="/Home/Index" id="frmLogin">
+    <div class="email">
+        Login
+        <input type="text" name='txtUsuario' placeholder="Usuário" class='input-block-level'>
+
+    </div>
+    <div class="pw">
+        Senha
+        <input type="password" name="txtSenha" placeholder="Senha" class='input-block-level'>
+    </div>
+    <div class="submit">
+        <input type="submit" value="Entrar" class='btn btn-primary'>
+    </div>
+    <p class="txt-center ls-login-signup">
+        <a href="/home/inscreva" class="ls-login-forgot">Inscreva-se</a>
+    </p>
 
 
-			</form>
+
+</form>
 			
