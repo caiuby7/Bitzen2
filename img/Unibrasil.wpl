@@ -1,0 +1,20 @@
+<?wpl version="1.0"?>
+<smil>
+    <head>
+        <meta name="Generator" content="Microsoft Windows Media Player -- 12.0.9600.17415"/>
+        <meta name="ItemCount" content="2"/>
+        <meta name="IsFavorite"/>
+        <meta name="ContentPartnerListID"/>
+        <meta name="ContentPartnerNameType"/>
+        <meta name="ContentPartnerName"/>
+        <meta name="Subtitle"/>
+        <author/>
+        <title>Unibrasil</title>
+    </head>
+    <body>
+        <seq>
+            <media src="..\..\Videos\APRESENTAÇÃO r_1.wmv" tid="{DC33A58D-467D-4CDE-B413-92E19F8BCF7F}"/>
+            <media src="H:\Visual Studio 2012\Projects\Dashboard - Copia (2)\Dashboard\img\uni.flv"/>
+        </seq>
+    </body>
+</smil>

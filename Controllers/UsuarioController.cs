@@ -32,10 +32,10 @@ namespace Bitzen.Controllers
 
       context.Usuarios.Add(model);
       await context.SaveChangesAsync();
-      return new DefaultViewModel(true, "Usurio criado com sucesso!", model);
+      return new DefaultViewModel(true, "Usuario criado com sucesso!", model);
     }
 
-    [HttpPut]
+        [HttpPut]
     [Route("{id:int}")]
     [Authorize(Roles = PermissaoHelper.Admin)]
     public async Task<ActionResult<DefaultViewModel>> Put([FromServices] DataContext context, int id, [FromBody] Usuario model)

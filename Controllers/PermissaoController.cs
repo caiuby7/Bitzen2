@@ -19,21 +19,43 @@ namespace Bitzen.Controllers
     {
       _service = service;
     }
-
-    [HttpGet]
+        /// <summary>
+        /// Lista os perfils de acesso.
+        /// </summary>
+        /// <returns>Os itens de perfil list</returns>
+        /// <response code="200">Returna os itens cadastrados</response>
+        [HttpGet]
     public async Task<ActionResult<List<Permissao>>> Get()
     {
       return Ok(await _service.BuscarTodos());
     }
 
-    [HttpPost]
-    [Route("{id:int}")]
-    public async Task<ActionResult<DefaultViewModel>> Post(int id, [FromBody] Permissao model)
+        // POST api/Bitzen
+        /// <summary>
+        /// Cria um Perfil.
+        /// </summary>
+        /// <remarks>
+        /// Exemplo:
+        ///
+        ///     POST
+        ///     {
+        ///        "id": 1 (campo autoincremento),
+        ///        "descrição": "Adminstrador",
+        ///        "ativo": true
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="descricao"></param>
+        /// <returns>Um novo item criado</returns>
+        /// <response code="201">Retorna o novo item criado</response>
+        [HttpPost]
+    [Route("{descricao:alpha}")]
+    public async Task<ActionResult<DefaultViewModel>> Post(string descricao)
     {
       if (!ModelState.IsValid)
         return BadRequest(ModelState);
 
-    
+            Permissao model = new Permissao(descricao);
 
       var newPermissao = await _service.Criar(model);
 

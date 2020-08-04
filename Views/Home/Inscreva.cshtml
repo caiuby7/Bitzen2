@@ -1,0 +1,21 @@
+﻿@{
+   
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+@Html.Raw(TempData["msg"])
+<h2>Inscreva- se</h2>
+			<form method="post" action="/Home/Inscreva" id="frmsenha">
+				<div class="email">
+					<input type="text" name='Nome' placeholder="Nome Completo" class='input-block-level'>
+				</div>
+				<div class="email">
+					<input type="text" name="email" placeholder="Email" class='input-block-level'>
+				</div>
+                <div class="pw">
+					<input type="password" name="Senha" placeholder="Senha" class='input-block-level'>
+				</div>
+				<div class="submit">
+					<input type="submit" value="Entrar" class='btn btn-primary'>
+				</div>
+			</form>
+			
