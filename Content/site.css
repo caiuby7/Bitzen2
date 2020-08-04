@@ -1,0 +1,39 @@
+﻿#footer {
+    margin-top: 5pt;
+    color: #888;
+}
+
+@media (min-width: 980px) {
+    body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
+
+/* adjust path for Bootstrap icons */
+[class^="icon-"], [class*=" icon-"] {
+    background-image: url("/Content/images/glyphicons-halflings.png");
+}
+#loading-full{
+ display: block;
+ background-image: url("../img/bg-loading.png");
+ -webkit-background-size: 100%;
+ background-size: 100%;
+ width: 100%;
+ height: 100%;
+ z-index: 99999;
+ position: fixed;
+}
+
+#loading-full .loading{
+  display: block;
+  background-image: url("../img/loading603.gif");
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 60px;
+  margin-left: -15px;
+  margin-top: -15px;
+ }

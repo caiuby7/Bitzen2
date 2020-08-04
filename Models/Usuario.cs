@@ -35,5 +35,9 @@ namespace Bitzen.Models
             IdPermissao = idPermissao;
             Ativo = ativo;
         }
+
+        public Usuario()
+        {
+        }
     }
 }
