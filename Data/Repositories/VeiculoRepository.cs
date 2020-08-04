@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Bitzen.Interface.Repositories;
 using Bitzen.Models;
+using Microsoft.EntityFrameworkCore.Internal;
 
 namespace Bitzen.Data.Repositories
 {
@@ -42,6 +43,12 @@ namespace Bitzen.Data.Repositories
 
 
         public async Task<IList<Veiculo>> BuscarTodos()
+        {
+            return await _context.Veiculo
+                               .AsNoTracking()
+                               .ToListAsync();
+        }
+        public async Task<IList<Veiculo>> BuscarTodosPorAno()
         {
             return await _context.Veiculo
                                .AsNoTracking()

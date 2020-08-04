@@ -45,6 +45,17 @@ namespace Bitzen.Data.Repositories
                                .AsNoTracking()
                                .ToListAsync();
         }
+        public async Task<IList<Abastecimento>> BuscarTodosporAno()
+        {
+            return await _context.Abastecimento
+                               .AsNoTracking()
+                               .OrderBy(o => new
+                               {
+                                   Month = o.Data.Month,
+                                   Year = o.Data.Year
+                               })
+                               .ToListAsync();
+        }
 
         public async Task<Abastecimento> Criar(Abastecimento row)
         {
