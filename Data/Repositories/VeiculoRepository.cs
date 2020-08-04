@@ -32,6 +32,15 @@ namespace Bitzen.Data.Repositories
                                 .FirstOrDefaultAsync();
         }
 
+        public async Task<IList<Veiculo>> BuscarPorUsuario(int idUser)
+        {
+            return await _context.Veiculo
+                                .AsNoTracking()
+                                .Where(x => x.IdUsuario == idUser)
+                                 .ToListAsync();
+        }
+
+
         public async Task<IList<Veiculo>> BuscarTodos()
         {
             return await _context.Veiculo

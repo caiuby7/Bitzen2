@@ -25,7 +25,11 @@ namespace Bitzen.Services
       return await _repository.BuscarPorId(id);
     }
 
-    public async Task<IEnumerable<Veiculo>> BuscarTodos()
+        public async Task<IEnumerable<Veiculo>> BuscarPorUsuario(int idUser)
+        {
+            return await _repository.BuscarPorUsuario(idUser);
+        }
+        public async Task<IEnumerable<Veiculo>> BuscarTodos()
     {
       return await _repository.BuscarTodos();
     }

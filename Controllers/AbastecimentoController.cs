@@ -25,8 +25,15 @@ namespace Bitzen.Controllers
     {
       return Ok(await _service.BuscarTodos());
     }
+        [HttpGet]
+        [Route("{idUsuario:int}")]
+        public async Task<ActionResult<List<Abastecimento>>> GetforUser(int idUsuario)
+        {
+            return Ok(await _service.BuscarPorUsuario(idUsuario));
+        }
 
-    [HttpPost]
+
+        [HttpPost]
     [Route("{id:int}")]
     public async Task<ActionResult<DefaultViewModel>> Post(int id, [FromBody] Abastecimento model)
     {

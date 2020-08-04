@@ -8,7 +8,9 @@ namespace Bitzen.Interface.Services
     {
     Task<IEnumerable<Veiculo>> BuscarTodos();
     Task<Veiculo> BuscarPorId(int id);
-    Task<Veiculo> Criar(Veiculo row);
+
+        Task<IEnumerable<Veiculo>> BuscarPorUsuario(int idUser);
+        Task<Veiculo> Criar(Veiculo row);
     Task<Veiculo> Atualizar(int id, Veiculo row);
     Task<Veiculo> Excluir(int id);
   }

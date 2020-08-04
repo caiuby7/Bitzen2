@@ -8,7 +8,9 @@ namespace Bitzen.Interface.Repositories
     {
     Task<IList<Veiculo>> BuscarTodos();
     Task<Veiculo> BuscarPorId(int id);
-    Task<Veiculo> Criar(Veiculo row);
+
+        Task<IList<Veiculo>> BuscarPorUsuario(int idUser);
+        Task<Veiculo> Criar(Veiculo row);
     Task<Veiculo> Atualizar(int id, Veiculo row);
     Task<Veiculo> Excluir(int id);
   }
