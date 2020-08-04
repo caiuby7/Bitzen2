@@ -63,9 +63,9 @@ namespace Bitzen.Data.Repositories
                 {
 
                     mes.veiculo[p].relatorio_abastecimento = new Relatorio_Abastecimento();
-                    mes.veiculo[p].relatorio_abastecimento.kmrodados = _context.Abastecimento.Where(t => t.IdVeiculo == mes.veiculo[p].Id).Sum(i => long.Parse(i.Km.ToString() ));
-                    mes.veiculo[p].relatorio_abastecimento.totallitros = _context.Abastecimento.Where(t => t.IdVeiculo == mes.veiculo[p].Id).Sum(i => long.Parse(i.Litros.ToString()));
-                    mes.veiculo[p].relatorio_abastecimento.totalpago = _context.Abastecimento.Where(t => t.IdVeiculo == mes.veiculo[p].Id).Sum(i => long.Parse(i.ValorPago.ToString()));
+                    mes.veiculo[p].relatorio_abastecimento.kmrodados = _context.Abastecimento.Where(t => t.IdVeiculo == mes.veiculo[p].Id && t.Data.Month == i + 1).Sum(i => long.Parse(i.Km.ToString() ));
+                    mes.veiculo[p].relatorio_abastecimento.totallitros = _context.Abastecimento.Where(t => t.IdVeiculo == mes.veiculo[p].Id && t.Data.Month == i + 1).Sum(i => long.Parse(i.Litros.ToString()));
+                    mes.veiculo[p].relatorio_abastecimento.totalpago = _context.Abastecimento.Where(t => t.IdVeiculo == mes.veiculo[p].Id && t.Data.Month == i + 1).Sum(i => long.Parse(i.ValorPago.ToString()));
                     mes.veiculo[p].relatorio_abastecimento.mediaporkm = mes.veiculo[p].relatorio_abastecimento.kmrodados / mes.veiculo[p].relatorio_abastecimento.totallitros;
                 }
                 
